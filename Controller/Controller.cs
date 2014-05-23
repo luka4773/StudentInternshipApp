@@ -15,8 +15,7 @@ namespace STudentInternshipApplication.Controller
 
         public ObservableCollection<Student.Student> GetStudents()
         {
-            _access.GetStudents();
-            return GetStudents();
+            return _access.GetStudents();
         }
 
         public void AddStudent(Student.Student student)

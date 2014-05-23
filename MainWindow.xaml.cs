@@ -21,14 +21,17 @@ namespace STudentInternshipApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MainViewModel main = new MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = main;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           
+          
         }
 
      

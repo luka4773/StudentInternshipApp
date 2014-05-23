@@ -9,32 +9,34 @@ using System.Windows.Input;
 using STudentInternshipApplication.Annotations;
 using STudentInternshipApplication.Student;
 
-namespace STudentInternshipApplication.MainWindow
+namespace STudentInternshipApplication
 {
-    class MainWindowViewModel : INotifyPropertyChanged
+    class MainViewModel : INotifyPropertyChanged
     {
-        private readonly ICommand _openStudents;
+        private readonly ICommand _openStudentsCommand;
+
 
         public ICommand openStudents
-        { 
-            get { return _openStudents; }
+        {
+            get { return _openStudentsCommand; }
         }
+
+
         private void openStudentsCommand()
         {
-            var s = new Students();
-            s.Show();
+          var s = new Students();
+          s.Show();
         }
-        public MainWindowViewModel()
+
+
+        public MainViewModel()
         {
-           _openStudents = new RelayCommand(openStudentsCommand) {IsEnabled = true};
+                _openStudentsCommand = new RelayCommand(openStudentsCommand){IsEnabled = true};
         }
 
 
 
-
-
-
-        #region InotifyPropertyChanged
+        #region propertychanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
