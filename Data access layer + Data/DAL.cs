@@ -54,7 +54,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "UPDATE StudentTable SET Cpr = @Cpr, Name = @Name, Age = @Age, Address = @Address, MobilePhone = @MobilePhone"
+                CommandText = "UPDATE StudentDataTable SET Cpr = @Cpr, Name = @Name, Age = @Age, Address = @Address, MobilePhone = @MobilePhone"
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.Parameters.Add(new SqlParameter("Name", student.Name));
