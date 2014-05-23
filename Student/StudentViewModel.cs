@@ -26,8 +26,21 @@ namespace STudentInternshipApplication.Student
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
         Controller.Controller controller = new Controller.Controller();
+        private readonly string _currentStudentName ="CurrentStudent";
+        private Student _currentStudent;
 
-
+        public Student CurrentStudent
+        {
+            get { return _currentStudent; }
+            set
+            {
+                if (value != _currentStudent)
+                {
+                    _currentStudent = value;
+                    OnPropertyChanged(_currentStudentName);
+                }
+            }
+        }
         #region Icommands
 
         public ICommand AddStudent
@@ -152,6 +165,7 @@ namespace STudentInternshipApplication.Student
             _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
             _editStudentCommand = new RelayCommand(EditStudentCommand) { IsEnabled = true };
             _addStudentCommand = new RelayCommand(AddStudentCommand) { IsEnabled = true };
+            _currentStudent = Students[0];
 
         }
         
