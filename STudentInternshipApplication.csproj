@@ -70,6 +70,7 @@
     </ApplicationDefinition>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Data access layer + Data\DAL.cs" />
+    <Compile Include="MainWindowFolder\MainWindowViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Student\StudentViews\CreateStudent.xaml.cs">

@@ -72,7 +72,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "DELETE FROM StudentTable WHERE Cpr = @Cpr"
+                CommandText = "DELETE FROM StudentDataTable WHERE Cpr = @Cpr"
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.ExecuteNonQuery();
@@ -88,7 +88,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "SELECT * FROM StudentTable"
+                CommandText = "SELECT * FROM StudentDataTable"
             };
             var reader = command.ExecuteReader();
             var collection = new ObservableCollection<Student.Student>();

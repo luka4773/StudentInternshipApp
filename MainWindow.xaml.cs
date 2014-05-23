@@ -19,7 +19,7 @@ namespace STudentInternshipApplication
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
@@ -28,8 +28,7 @@ namespace STudentInternshipApplication
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var s = new Students();
-            s.Show();
+           
         }
 
      
