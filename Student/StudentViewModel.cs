@@ -28,6 +28,7 @@ namespace STudentInternshipApplication.Student
         private readonly ICommand _closeAddStudent;
         private readonly ICommand _openRemoveStudent;
         private readonly ICommand _closeRemoveStudent;
+       
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
         Controller.Controller controller = new Controller.Controller();
@@ -47,6 +48,7 @@ namespace STudentInternshipApplication.Student
         }
         #region Icommands
 
+        
         public ICommand CloseRemoveStudent
         {
             get { return _closeRemoveStudent; }
@@ -83,6 +85,7 @@ namespace STudentInternshipApplication.Student
 
         #endregion
 
+        
         private void OpenAddStudentCommand()
         {
             

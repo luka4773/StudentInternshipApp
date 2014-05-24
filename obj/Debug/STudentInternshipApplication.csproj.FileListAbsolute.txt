@@ -26,3 +26,5 @@ E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplicati
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\AddCompany.g.cs
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Student\StudentViews\RemoveStudent.baml
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Student\StudentViews\RemoveStudent.g.cs
+E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\RemoveCompany.baml
+E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\RemoveCompany.g.cs

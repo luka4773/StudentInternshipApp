@@ -74,6 +74,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.ExecuteNonQuery();
+            MessageBox.Show("Student deleted.");
             Disconnect();
         }
        
@@ -147,7 +148,20 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             MessageBox.Show("Company added.");
             Disconnect();
         }
-
+        public void RemoveCompany(Company.Company company)
+        {
+            Connect();
+            var command = new SqlCommand()
+            {
+                Connection = _connection,
+                CommandType = CommandType.Text,
+                CommandText = "DELETE FROM CompanyDataTable WHERE Name = @Name"
+            };
+            command.Parameters.Add(new SqlParameter("Name", company.Name));
+            command.ExecuteNonQuery();
+            MessageBox.Show("Company deleted.");
+            Disconnect();
+        }
 
         }
     }

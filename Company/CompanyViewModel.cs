@@ -17,6 +17,20 @@ namespace STudentInternshipApplication.Company
     {
         Controller.Controller controller = new Controller.Controller();
         private ObservableCollection<Company> _getCompanies = new ObservableCollection<Company>();
+        private Company _currentCompany;
+
+        public Company CurrentCompany
+        {
+            get { return _currentCompany; }
+            set
+            {
+                if (value != _currentCompany)
+                {
+                    _currentCompany = value;
+                    OnPropertyChanged("CurrentCompany");
+                }
+            }
+        }
 
 
         #region Commands
@@ -26,6 +40,19 @@ namespace STudentInternshipApplication.Company
         private readonly ICommand _removeCompanyCommand;
         private readonly ICommand _openAddCompanyCommand;
         private readonly ICommand _closeAddCompanyCommand;
+        private readonly ICommand _openRemoveCompanyCommand;
+        private readonly ICommand _closeRemoveCompanyCommand;
+
+
+        public ICommand OpenRemoveCompanyCommand
+        {
+            get { return _openRemoveCompanyCommand; }
+        }
+
+        public ICommand CloseRemoveCompanyCommand
+        {
+            get { return _closeRemoveCompanyCommand; }
+        }
 
         public ICommand CloseAddCompany
         {
@@ -50,6 +77,17 @@ namespace STudentInternshipApplication.Company
             get { return _editCompanyCommand; }
         }
 
+        private void OpenRemoveCompaniesCommand()
+        {
+            var c = new RemoveCompany();
+            c.Show();
+        }
+
+        private void CloseRemoveCompaniesCommand()
+        {
+            var c = new Companies();
+            c.Show();
+        }
         private void CloseAddCompanyCommand()
         {
             
@@ -75,7 +113,11 @@ namespace STudentInternshipApplication.Company
 
         private void RemoveCompanyCommand()
         {
-
+            var c = new Company
+            {
+                Name = CompanyName
+            };
+            controller.RemoveCompany(c);
         }
 
         private void EditCompanyCommand()
@@ -146,6 +188,9 @@ namespace STudentInternshipApplication.Company
             _removeCompanyCommand = new RelayCommand(RemoveCompanyCommand){IsEnabled = true};
             _openAddCompanyCommand = new RelayCommand(OpenAddCompanyCommand){IsEnabled = true};
             _closeAddCompanyCommand = new RelayCommand(CloseAddCompanyCommand){IsEnabled = true};
+            _openRemoveCompanyCommand = new RelayCommand(OpenRemoveCompaniesCommand){IsEnabled = true};
+            _closeRemoveCompanyCommand = new RelayCommand(CloseRemoveCompaniesCommand){IsEnabled = true};
+            _currentCompany = Companies[0];
         }
 
 
