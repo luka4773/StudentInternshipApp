@@ -26,7 +26,6 @@ namespace STudentInternshipApplication.Student
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
         Controller.Controller controller = new Controller.Controller();
-        private readonly string _currentStudentName ="CurrentStudent";
         private Student _currentStudent;
 
         public Student CurrentStudent
@@ -37,7 +36,7 @@ namespace STudentInternshipApplication.Student
                 if (value != _currentStudent)
                 {
                     _currentStudent = value;
-                    OnPropertyChanged(_currentStudentName);
+                    OnPropertyChanged("CurrentStudent");
                 }
             }
         }

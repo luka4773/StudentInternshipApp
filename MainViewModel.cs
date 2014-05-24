@@ -14,6 +14,13 @@ namespace STudentInternshipApplication
     class MainViewModel : INotifyPropertyChanged
     {
         private readonly ICommand _openStudentsCommand;
+        private readonly ICommand _openCompaniesCommand;
+
+
+        public ICommand openCompanies
+        {
+            get { return _openCompaniesCommand; }
+        }
 
 
         public ICommand openStudents
@@ -21,6 +28,13 @@ namespace STudentInternshipApplication
             get { return _openStudentsCommand; }
         }
 
+
+        private void openCompaniesCommand()
+        {
+            var c = new Company.CompanyViews.Companies();
+            c.Show();
+
+        }
 
         private void openStudentsCommand()
         {
@@ -32,6 +46,7 @@ namespace STudentInternshipApplication
         public MainViewModel()
         {
                 _openStudentsCommand = new RelayCommand(openStudentsCommand){IsEnabled = true};
+                _openCompaniesCommand = new RelayCommand(openCompaniesCommand){IsEnabled = true};
         }
 
 

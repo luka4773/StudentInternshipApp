@@ -9,7 +9,8 @@ using STudentInternshipApplication.Data_access_layer___Data;
 namespace STudentInternshipApplication.Controller
 {
     class Controller
-    {
+    {   
+        Company.Company c = new Company.Company();
         Student.Student s = new Student.Student();
         DAL _access = new DAL();
 
@@ -22,6 +23,17 @@ namespace STudentInternshipApplication.Controller
         {
             _access.AddStudent(s);
         }
+
+        public void AddCompany(Company.Company company)
+        {
+            _access.AddCompany(c);
+        }
+
+        public ObservableCollection<Company.Company> GetCompanies()
+        {
+            return _access.Getcompanies();
+        }
+
 
     }
 }

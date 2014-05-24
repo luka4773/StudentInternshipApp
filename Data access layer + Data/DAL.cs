@@ -107,5 +107,51 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             Disconnect();
             return collection;
         }
+
+        public ObservableCollection<Company.Company> Getcompanies()
+        {
+            Connect();
+            var command = new SqlCommand()
+            {
+                Connection = _connection,
+                CommandType = CommandType.Text,
+                CommandText = "SELECT * FROM CompanyDataTable"
+            };
+            var reader = command.ExecuteReader();
+            var collection = new ObservableCollection<Company.Company>();
+            while (reader.Read())
+            {
+                var company = new Company.Company
+                {
+                    Name = (string) reader[0],
+                    Email = (string) reader[1],
+                    Address = (string) reader[2]
+                };
+                collection.Add(company);
+            }
+            Disconnect();
+            return collection;
+
+        }
+
+        public void AddCompany(Company.Company company)
+        {
+            Connect();
+            var command = new SqlCommand()
+            {
+                Connection = _connection,
+                CommandType = CommandType.Text,
+                CommandText = "INSERT INTO CompanyDataTable VALUES (@Name, @Email, @Address)"
+            };
+            command.Parameters.Add(new SqlParameter("Name", company.Name));
+            command.Parameters.Add(new SqlParameter("Email", company.Email));
+            command.Parameters.Add(new SqlParameter("Address", company.Address));
+            command.ExecuteNonQuery();
+            MessageBox.Show("Company added.");
+            Disconnect();
+        }
+
+
+        }
     }
-}
+

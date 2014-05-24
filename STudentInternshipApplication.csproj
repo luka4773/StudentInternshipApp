@@ -68,6 +68,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Company\Company.cs" />
+    <Compile Include="Company\CompanyViewModel.cs" />
+    <Compile Include="Company\CompanyViews\Companies.xaml.cs">
+      <DependentUpon>Companies.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Data access layer + Data\DAL.cs" />
     <Compile Include="MainViewModel.cs" />
@@ -84,6 +89,10 @@
       <DependentUpon>Students.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student\StudentViewModel.cs" />
+    <Page Include="Company\CompanyViews\Companies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,7 +146,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Company\" />
     <Folder Include="Internship\" />
   </ItemGroup>
   <ItemGroup>
