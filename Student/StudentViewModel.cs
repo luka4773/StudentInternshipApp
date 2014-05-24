@@ -18,7 +18,7 @@ namespace STudentInternshipApplication.Student
         private string _studentname;
         private string _studentsupervisor;
         private int _studentage;
-        private int _studentcpr;
+        private string _studentcpr;
        
         private readonly ICommand _removeStudentCommand;
         private readonly ICommand _editStudentCommand;
@@ -138,7 +138,7 @@ namespace STudentInternshipApplication.Student
             }
         }
 
-        public int StudentCpr
+        public string StudentCpr
         {
             get { return _studentcpr; }
             set

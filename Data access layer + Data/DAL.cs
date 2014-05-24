@@ -94,7 +94,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 var student = new Student.Student
                 {
-                    Cpr = (int)reader[0],
+                    Cpr = (string)reader[0],
                     Name = (string)reader[1],
                     Age = (int)reader[2],
                     Supervisor = (string)reader[3]

@@ -11,7 +11,7 @@ namespace STudentInternshipApplication.Student
         private string _name;
         private string _supervisor;
         private int _age;
-        private int _cpr;
+        private string _cpr;
        
 
 
@@ -33,7 +33,7 @@ namespace STudentInternshipApplication.Student
             set { _age = value; }
         }
 
-        public int Cpr
+        public string Cpr
         {
             get { return _cpr; }
             set { _cpr = value; }
