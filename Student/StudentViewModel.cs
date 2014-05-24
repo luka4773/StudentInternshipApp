@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using STudentInternshipApplication.Annotations;
 using STudentInternshipApplication.Data_access_layer___Data;
+using STudentInternshipApplication.Student.StudentViews;
 
 namespace STudentInternshipApplication.Student
 {
@@ -25,6 +26,8 @@ namespace STudentInternshipApplication.Student
         private readonly ICommand _addStudentCommand;
         private readonly ICommand _openAddStudent;
         private readonly ICommand _closeAddStudent;
+        private readonly ICommand _openRemoveStudent;
+        private readonly ICommand _closeRemoveStudent;
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
         Controller.Controller controller = new Controller.Controller();
@@ -43,6 +46,16 @@ namespace STudentInternshipApplication.Student
             }
         }
         #region Icommands
+
+        public ICommand CloseRemoveStudent
+        {
+            get { return _closeRemoveStudent; }
+        }
+        public ICommand OpenRemoveStudent
+        {
+            get { return _openRemoveStudent; }
+        }
+        
 
         public ICommand Done
         {
@@ -78,7 +91,11 @@ namespace STudentInternshipApplication.Student
         }
         private void RemoveStudentCommand()
         {
-            
+            var s = new Student
+            {
+                Cpr = StudentCpr
+            };
+            controller.RemoveStudent(s);
         }
 
         private void EditStudentCommand()
@@ -104,6 +121,17 @@ namespace STudentInternshipApplication.Student
             controller.AddStudent(s);
            
 
+        }
+
+        private void CloseRemoveStudents()
+        {
+            var s = new Students();
+            s.Show();
+        }
+        private void OpenRemoveStudents()
+        {
+            var s = new RemoveStudent();
+            s.Show();
         }
 
         #region Properties
@@ -181,7 +209,10 @@ namespace STudentInternshipApplication.Student
             _addStudentCommand = new RelayCommand(AddStudentCommand) { IsEnabled = true };
             _openAddStudent = new RelayCommand(OpenAddStudentCommand){IsEnabled = true};
             _closeAddStudent = new RelayCommand(CloseAddStudentCommand){IsEnabled = true};
+            _openRemoveStudent = new RelayCommand(OpenRemoveStudents){IsEnabled = true};
+            _closeRemoveStudent = new RelayCommand(CloseRemoveStudents){IsEnabled = true};
             _currentStudent = Students[0];
+
 
         }
         

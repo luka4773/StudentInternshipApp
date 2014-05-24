@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\App.xaml
-6-1559262759
+7-1303612692
 2-109428629
-19-523563264
+21170064329
 121886138872
-Company\CompanyViews\AddCompany.xaml;Company\CompanyViews\Companies.xaml;MainWindow.xaml;Student\StudentViews\CreateStudent.xaml;Student\StudentViews\EditStudent.xaml;Student\StudentViews\Students.xaml;
+Company\CompanyViews\AddCompany.xaml;Company\CompanyViews\Companies.xaml;MainWindow.xaml;Student\StudentViews\CreateStudent.xaml;Student\StudentViews\EditStudent.xaml;Student\StudentViews\RemoveStudent.xaml;Student\StudentViews\Students.xaml;
 
 False
 

@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Data access layer + Data\DAL.cs" />
+    <Compile Include="Internship\Internship.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
@@ -88,6 +89,9 @@
       <DependentUpon>EditStudent.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student\Student.cs" />
+    <Compile Include="Student\StudentViews\RemoveStudent.xaml.cs">
+      <DependentUpon>RemoveStudent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Student\StudentViews\Students.xaml.cs">
       <DependentUpon>Students.xaml</DependentUpon>
     </Compile>
@@ -117,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Student\StudentViews\EditStudent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Student\StudentViews\RemoveStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,9 +160,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Internship\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Data access layer + Data\Data.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -33,6 +33,9 @@ namespace STudentInternshipApplication.Controller
             return _access.Getcompanies();
         }
 
-
+        public void RemoveStudent(Student.Student student)
+        {
+            _access.RemoveStudent(student);
+        }
     }
 }

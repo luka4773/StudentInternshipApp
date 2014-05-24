@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,32 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace STudentInternshipApplication.Student
+namespace STudentInternshipApplication.Student.StudentViews
 {
     /// <summary>
-    /// Interaction logic for Students.xaml
+    /// Interaction logic for RemoveStudent.xaml
     /// </summary>
-    public partial class Students : Window
+    public partial class RemoveStudent : Window
     {
-        StudentViewModel studentViewModel = new StudentViewModel();
-        public Students()
+        StudentViewModel s = new StudentViewModel();
+        public RemoveStudent()
         {
             InitializeComponent();
-            DataContext = studentViewModel;
+            DataContext = s;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-           
-        }
-
-        private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
-        {
-         
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Close();
         }
