@@ -23,6 +23,8 @@ namespace STudentInternshipApplication.Student
         private readonly ICommand _removeStudentCommand;
         private readonly ICommand _editStudentCommand;
         private readonly ICommand _addStudentCommand;
+        private readonly ICommand _openAddStudent;
+        private readonly ICommand _closeAddStudent;
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
         Controller.Controller controller = new Controller.Controller();
@@ -42,6 +44,15 @@ namespace STudentInternshipApplication.Student
         }
         #region Icommands
 
+        public ICommand Done
+        {
+            get { return _closeAddStudent; }
+        }
+
+        public ICommand OpenAdd
+        {
+            get { return _openAddStudent; }
+        }
         public ICommand AddStudent
         {
             get { return _addStudentCommand; }
@@ -59,6 +70,12 @@ namespace STudentInternshipApplication.Student
 
         #endregion
 
+        private void OpenAddStudentCommand()
+        {
+            
+            var s = new CreateStudent();
+            s.Show();
+        }
         private void RemoveStudentCommand()
         {
             
@@ -69,6 +86,11 @@ namespace STudentInternshipApplication.Student
             
         }
 
+        private void CloseAddStudentCommand()
+        {
+            var s = new Students();
+            s.Show();
+        }
         private void AddStudentCommand()
         {
             var s = new Student
@@ -80,7 +102,7 @@ namespace STudentInternshipApplication.Student
                
             };
             controller.AddStudent(s);
-            MessageBox.Show("THIS BUTTON SHOULD FUCKING WORK");
+           
 
         }
 
@@ -157,6 +179,8 @@ namespace STudentInternshipApplication.Student
             _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
             _editStudentCommand = new RelayCommand(EditStudentCommand) { IsEnabled = true };
             _addStudentCommand = new RelayCommand(AddStudentCommand) { IsEnabled = true };
+            _openAddStudent = new RelayCommand(OpenAddStudentCommand){IsEnabled = true};
+            _closeAddStudent = new RelayCommand(CloseAddStudentCommand){IsEnabled = true};
             _currentStudent = Students[0];
 
         }

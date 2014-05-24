@@ -1,19 +1,18 @@
 ﻿<Window x:Class="STudentInternshipApplication.Student.CreateStudent"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CreateStudent" Height="210.001" Width="266.667">
+        Title="CreateStudent" Height="187.001" Width="266.667">
     <Grid Margin="10,0,2,1">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="115,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="115,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="115,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="115,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="115,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding StudentCpr}" HorizontalAlignment="Left" Height="23" Margin="115,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding StudentName}" HorizontalAlignment="Left" Height="23" Margin="115,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding StudentAge}" HorizontalAlignment="Left" Height="23" Margin="115,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding StudentSupervisor}" HorizontalAlignment="Left" Height="23" Margin="115,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Cpr" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="25,38,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="25,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.552,3.556"/>
         <Label Content="Supervisor" HorizontalAlignment="Left" Margin="25,94,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mobile Phone" HorizontalAlignment="Left" Margin="25,122,0,0" VerticalAlignment="Top"/>
-        <Button Content="Add Student" Command="{Binding AddStudent}" HorizontalAlignment="Left" Margin="130,150,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Add Student" Command="{Binding AddStudent}" HorizontalAlignment="Left" Margin="126,129,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Done" Command="{Binding Done}" HorizontalAlignment="Left" Margin="25,129,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

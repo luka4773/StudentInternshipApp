@@ -4,17 +4,9 @@
         Title="Students" Height="309" Width="781.555">
     <Grid Margin="0,0,0,61">
         <DataGrid ItemsSource="{Binding Students}" SelectedItem="{Binding CurrentStudent}" HorizontalAlignment="Left" Margin="10,10,0,0" Width="578" Height="149" VerticalAlignment="Top"/>
-        <Button Content="Add new student" Command="{Binding AddStudent}" HorizontalAlignment="Left" Height="24" Margin="27,181,0,-33" VerticalAlignment="Top" Width="110"/>
+        <Button Content="Add new student" Command="{Binding OpenAdd}" HorizontalAlignment="Left" Height="24" Margin="27,181,0,-33" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
         <Button Content="Delete selected student" HorizontalAlignment="Left" Height="24" Margin="157,181,0,-33" VerticalAlignment="Top" Width="133"/>
         <Button Content="Edit selected student" HorizontalAlignment="Left" Height="24" Margin="308,181,0,-33" VerticalAlignment="Top" Width="110"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="634,48,0,0" TextWrapping="Wrap" Text="{Binding StudentName}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="634,132,0,0" TextWrapping="Wrap" Text="{Binding StudentAge}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="634,104,0,0" TextWrapping="Wrap" Text="{Binding StudentSupervisor}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="634,76,0,0" TextWrapping="Wrap" Text="{Binding StudentCpr}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="589,132,0,0" VerticalAlignment="Top"/>
-        <Label Content="Svisor" HorizontalAlignment="Left" Margin="588,104,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cpr" HorizontalAlignment="Left" Margin="588,76,0,0" VerticalAlignment="Top"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="589,48,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

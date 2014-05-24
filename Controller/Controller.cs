@@ -10,8 +10,7 @@ namespace STudentInternshipApplication.Controller
 {
     class Controller
     {   
-        Company.Company c = new Company.Company();
-        Student.Student s = new Student.Student();
+        
         DAL _access = new DAL();
 
         public ObservableCollection<Student.Student> GetStudents()
@@ -21,12 +20,12 @@ namespace STudentInternshipApplication.Controller
 
         public void AddStudent(Student.Student student)
         {
-            _access.AddStudent(s);
+            _access.AddStudent(student);
         }
 
         public void AddCompany(Company.Company company)
         {
-            _access.AddCompany(c);
+            _access.AddCompany(company);
         }
 
         public ObservableCollection<Company.Company> GetCompanies()
