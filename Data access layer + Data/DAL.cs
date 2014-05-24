@@ -35,13 +35,12 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "INSERT INTO StudentDataTable VALUES (@Cpr, @Name, @Age, @Address, @MobilePhone)"
+                CommandText = "INSERT INTO StudentDataTable VALUES (@Cpr, @Name, @Age, @Supervisor)"
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.Parameters.Add(new SqlParameter("Name", student.Name));
-            command.Parameters.Add(new SqlParameter("Age", student.Age));
-            command.Parameters.Add(new SqlParameter("Address", student.Address));    
-            command.Parameters.Add(new SqlParameter("MobilePhone", student.MobilePhone));
+            command.Parameters.Add(new SqlParameter("Age", student.Age)); 
+            command.Parameters.Add(new SqlParameter("Supervisor", student.Supervisor));   
             command.ExecuteNonQuery();
             MessageBox.Show("Student added.");
             Disconnect();
@@ -54,13 +53,12 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "UPDATE StudentDataTable SET Cpr = @Cpr, Name = @Name, Age = @Age, Address = @Address, MobilePhone = @MobilePhone"
+                CommandText = "UPDATE StudentDataTable SET Cpr = @Cpr, Name = @Name, Age = @Age, Supervisor = @Supervisor"
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.Parameters.Add(new SqlParameter("Name", student.Name));
             command.Parameters.Add(new SqlParameter("Age", student.Age));
-            command.Parameters.Add(new SqlParameter("Address", student.Address));
-            command.Parameters.Add(new SqlParameter("MobilePhone", student.MobilePhone));
+            command.Parameters.Add(new SqlParameter("Supervisor", student.Supervisor));
             command.ExecuteNonQuery();
             Disconnect();
         }
@@ -99,8 +97,7 @@ namespace STudentInternshipApplication.Data_access_layer___Data
                     Cpr = (int)reader[0],
                     Name = (string)reader[1],
                     Age = (int)reader[2],
-                    Address = (string)reader[3],
-                    MobilePhone = (int)reader[4]
+                    Supervisor = (string)reader[3]
                 };
                 collection.Add(student);
             }

@@ -11,7 +11,7 @@
         <Label Content="Cpr" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="25,38,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="25,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.552,3.556"/>
-        <Label Content="Address" HorizontalAlignment="Left" Margin="25,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="Supervisor" HorizontalAlignment="Left" Margin="25,94,0,0" VerticalAlignment="Top"/>
         <Label Content="Mobile Phone" HorizontalAlignment="Left" Margin="25,122,0,0" VerticalAlignment="Top"/>
         <Button Content="Add Student" Command="{Binding AddStudent}" HorizontalAlignment="Left" Margin="130,150,0,0" VerticalAlignment="Top" Width="75"/>
 

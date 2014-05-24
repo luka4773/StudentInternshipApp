@@ -9,10 +9,10 @@ namespace STudentInternshipApplication.Student
     class Student
     {
         private string _name;
-        private string _address;
+        private string _supervisor;
         private int _age;
         private int _cpr;
-        private int _mobilephone;
+       
 
 
         public string Name
@@ -21,10 +21,10 @@ namespace STudentInternshipApplication.Student
             set { _name = value; }
         }
 
-        public string Address
+        public string Supervisor
         {
-            get{ return _address;}
-            set { _address = value; }
+            get{ return _supervisor;}
+            set { _supervisor = value; }
         }
 
         public int Age
@@ -39,10 +39,6 @@ namespace STudentInternshipApplication.Student
             set { _cpr = value; }
         }
 
-        public int MobilePhone
-        {
-            get { return _mobilephone; }
-            set { _mobilephone = value; }
-        }
+       
     }
 }

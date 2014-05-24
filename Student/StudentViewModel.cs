@@ -16,10 +16,10 @@ namespace STudentInternshipApplication.Student
     class StudentViewModel : INotifyPropertyChanged
     {
         private string _studentname;
-        private string _studentaddress;
+        private string _studentsupervisor;
         private int _studentage;
         private int _studentcpr;
-        private int _studentmobilephone;
+       
         private readonly ICommand _removeStudentCommand;
         private readonly ICommand _editStudentCommand;
         private readonly ICommand _addStudentCommand;
@@ -75,11 +75,12 @@ namespace STudentInternshipApplication.Student
             {
                 Name = StudentName,
                 Age = StudentAge,
-                Address = StudentAddress,
+                Supervisor = StudentSupervisor,
                 Cpr = StudentCpr,
-                MobilePhone = StudentMobilePhone
+               
             };
             controller.AddStudent(s);
+            MessageBox.Show("THIS BUTTON SHOULD FUCKING WORK");
 
         }
 
@@ -95,13 +96,13 @@ namespace STudentInternshipApplication.Student
             }
         }
 
-        public string StudentAddress
+        public string StudentSupervisor
         {
-            get { return _studentaddress; }
+            get { return _studentsupervisor; }
             set
             {
-                _studentaddress = value;
-                OnPropertyChanged("StudentAddress");
+                _studentsupervisor = value;
+                OnPropertyChanged("StudentSupervisor");
             }
         }
 
@@ -125,15 +126,7 @@ namespace STudentInternshipApplication.Student
             }
         }
 
-        public int StudentMobilePhone
-        {
-            get { return _studentmobilephone; }
-            set
-            {
-                _studentmobilephone = value;
-                OnPropertyChanged("StudentMobilePhone");
-            }
-        }
+      
 
         #endregion
 
