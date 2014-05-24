@@ -4,6 +4,7 @@
         Title="Companies" Height="300" Width="464.444">
     <Grid Margin="0,0,-8,0">
         <DataGrid ItemsSource="{Binding Companies}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="100" Width="272"/>
+        <Button Content="Add Company" Command="{Binding OpenAddCompany}" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>

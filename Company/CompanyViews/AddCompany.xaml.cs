@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 namespace STudentInternshipApplication.Company.CompanyViews
 {
     /// <summary>
-    /// Interaction logic for Companies.xaml
+    /// Interaction logic for AddCompany.xaml
     /// </summary>
-    public partial class Companies : Window
+    public partial class AddCompany : Window
     {
         CompanyViewModel companyViewModel = new CompanyViewModel();
-        public Companies()
+        public AddCompany()
         {
             InitializeComponent();
             DataContext = companyViewModel;

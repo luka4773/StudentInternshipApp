@@ -70,6 +70,9 @@
     </ApplicationDefinition>
     <Compile Include="Company\Company.cs" />
     <Compile Include="Company\CompanyViewModel.cs" />
+    <Compile Include="Company\CompanyViews\AddCompany.xaml.cs">
+      <DependentUpon>AddCompany.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Company\CompanyViews\Companies.xaml.cs">
       <DependentUpon>Companies.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>Students.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student\StudentViewModel.cs" />
+    <Page Include="Company\CompanyViews\AddCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Company\CompanyViews\Companies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

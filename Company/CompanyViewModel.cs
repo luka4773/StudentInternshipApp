@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using STudentInternshipApplication.Annotations;
+using STudentInternshipApplication.Company.CompanyViews;
 
 namespace STudentInternshipApplication.Company
 {
@@ -23,7 +24,17 @@ namespace STudentInternshipApplication.Company
         private readonly ICommand _addCompanyCommand;
         private readonly ICommand _editCompanyCommand;
         private readonly ICommand _removeCompanyCommand;
+        private readonly ICommand _openAddCompanyCommand;
+        private readonly ICommand _closeAddCompanyCommand;
 
+        public ICommand CloseAddCompany
+        {
+            get { return _closeAddCompanyCommand; }
+        }
+        public ICommand OpenAddCompany
+        {
+            get { return _openAddCompanyCommand; }
+        }
         public ICommand AddCompany
         {
             get { return _addCompanyCommand; }
@@ -39,6 +50,17 @@ namespace STudentInternshipApplication.Company
             get { return _editCompanyCommand; }
         }
 
+        private void CloseAddCompanyCommand()
+        {
+            
+            var c = new Companies();
+            c.Show();
+        }
+        private void OpenAddCompanyCommand()
+        {
+            var c = new AddCompany();
+            c.Show();
+        }
         private void AddCompanyCommand()
         {
             var c = new Company
@@ -122,6 +144,8 @@ namespace STudentInternshipApplication.Company
             _addCompanyCommand = new RelayCommand(AddCompanyCommand){IsEnabled = true};
             _editCompanyCommand = new RelayCommand(EditCompanyCommand){IsEnabled = true};
             _removeCompanyCommand = new RelayCommand(RemoveCompanyCommand){IsEnabled = true};
+            _openAddCompanyCommand = new RelayCommand(OpenAddCompanyCommand){IsEnabled = true};
+            _closeAddCompanyCommand = new RelayCommand(CloseAddCompanyCommand){IsEnabled = true};
         }
 
 

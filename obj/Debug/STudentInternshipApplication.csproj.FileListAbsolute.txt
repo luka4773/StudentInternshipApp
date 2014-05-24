@@ -22,3 +22,5 @@ E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplicati
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\STudentInternshipApplication.pdb
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\Companies.baml
 E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\Companies.g.cs
+E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\AddCompany.baml
+E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\obj\Debug\Company\CompanyViews\AddCompany.g.cs
