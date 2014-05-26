@@ -42,5 +42,10 @@ namespace STudentInternshipApplication.Controller
         {
             _access.RemoveCompany(company);
         }
+
+        public void EditStudent(Student.Student student)
+        {
+            _access.EditStudent(student);
+        }
     }
 }

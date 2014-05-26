@@ -6,7 +6,7 @@
         <DataGrid ItemsSource="{Binding Students}" SelectedItem="{Binding CurrentStudent}" HorizontalAlignment="Left" Margin="10,10,0,0" Width="578" Height="149" VerticalAlignment="Top" CellEditEnding="DataGrid_CellEditEnding"/>
         <Button Content="Add new student" Command="{Binding OpenAdd}" HorizontalAlignment="Left" Height="24" Margin="27,181,0,-33" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
         <Button Content="Delete a student" Command="{Binding OpenRemoveStudent}" HorizontalAlignment="Left" Height="24" Margin="157,181,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
-        <Button Content="Edit selected student" HorizontalAlignment="Left" Height="24" Margin="275,181,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Content="Edit selected student" Command="{Binding OpenEditStudent}" HorizontalAlignment="Left" Height="24" Margin="275,181,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_3"/>
 
 
     </Grid>

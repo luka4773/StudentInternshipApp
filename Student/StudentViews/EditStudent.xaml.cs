@@ -12,18 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace STudentInternshipApplication.Student
+namespace STudentInternshipApplication.Student.StudentViews
 {
     /// <summary>
     /// Interaction logic for EditStudent.xaml
     /// </summary>
     public partial class EditStudent : Window
     {
-        StudentViewModel studentViewModel = new StudentViewModel();
+
+        StudentViewModel  s = new StudentViewModel();
         public EditStudent()
         {
             InitializeComponent();
-            DataContext = studentViewModel;
+            DataContext = s;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

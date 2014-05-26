@@ -88,10 +88,10 @@
     <Compile Include="Student\StudentViews\CreateStudent.xaml.cs">
       <DependentUpon>CreateStudent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Student\Student.cs" />
     <Compile Include="Student\StudentViews\EditStudent.xaml.cs">
       <DependentUpon>EditStudent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student\Student.cs" />
     <Compile Include="Student\StudentViews\RemoveStudent.xaml.cs">
       <DependentUpon>RemoveStudent.xaml</DependentUpon>
     </Compile>

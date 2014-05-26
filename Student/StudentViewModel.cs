@@ -28,6 +28,8 @@ namespace STudentInternshipApplication.Student
         private readonly ICommand _closeAddStudent;
         private readonly ICommand _openRemoveStudent;
         private readonly ICommand _closeRemoveStudent;
+        private readonly ICommand _openEditStudent;
+        private readonly ICommand _closeEditStudent;
        
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
@@ -48,7 +50,15 @@ namespace STudentInternshipApplication.Student
         }
         #region Icommands
 
-        
+        public ICommand CloseEditStudent
+        {
+           get {return _closeEditStudent;} 
+        }
+
+        public ICommand OpenEditStudent
+        {
+            get { return _openEditStudent; }
+        }
         public ICommand CloseRemoveStudent
         {
             get { return _closeRemoveStudent; }
@@ -85,6 +95,16 @@ namespace STudentInternshipApplication.Student
 
         #endregion
 
+        private void CloseEditStudentCommand()
+        {
+            var s = new Students();
+            s.Show();
+        }
+        private void OpenEditStudentCommand()
+        {
+            var s = new EditStudent();
+            s.Show();
+        }
         
         private void OpenAddStudentCommand()
         {
@@ -103,7 +123,14 @@ namespace STudentInternshipApplication.Student
 
         private void EditStudentCommand()
         {
-            
+            var s = new Student
+            {
+                Cpr = StudentCpr,
+                Name = StudentName,
+                Age = StudentAge,
+                Supervisor = StudentSupervisor
+            };
+            controller.EditStudent(s);
         }
 
         private void CloseAddStudentCommand()
@@ -214,6 +241,8 @@ namespace STudentInternshipApplication.Student
             _closeAddStudent = new RelayCommand(CloseAddStudentCommand){IsEnabled = true};
             _openRemoveStudent = new RelayCommand(OpenRemoveStudents){IsEnabled = true};
             _closeRemoveStudent = new RelayCommand(CloseRemoveStudents){IsEnabled = true};
+            _openEditStudent = new RelayCommand(OpenEditStudentCommand){IsEnabled = true};
+            _closeEditStudent = new RelayCommand(CloseEditStudentCommand){IsEnabled = true};
             _currentStudent = Students[0];
 
 

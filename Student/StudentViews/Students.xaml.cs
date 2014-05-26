@@ -47,5 +47,10 @@ namespace STudentInternshipApplication.Student
         {
             Close();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

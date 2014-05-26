@@ -53,13 +53,15 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "UPDATE StudentDataTable SET Cpr = @Cpr, Name = @Name, Age = @Age, Supervisor = @Supervisor"
+                CommandText = "UPDATE StudentDataTable SET Name = @Name, Age = @Age, Supervisor = @Supervisor WHERE Cpr = @Cpr"
             };
             command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
             command.Parameters.Add(new SqlParameter("Name", student.Name));
             command.Parameters.Add(new SqlParameter("Age", student.Age));
             command.Parameters.Add(new SqlParameter("Supervisor", student.Supervisor));
+           
             command.ExecuteNonQuery();
+            MessageBox.Show("Student Updated.");
             Disconnect();
         }
 
