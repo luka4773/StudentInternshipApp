@@ -76,6 +76,9 @@
     <Compile Include="Company\CompanyViews\Companies.xaml.cs">
       <DependentUpon>Companies.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Company\CompanyViews\EditCompany.xaml.cs">
+      <DependentUpon>EditCompany.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Company\CompanyViews\RemoveCompany.xaml.cs">
       <DependentUpon>RemoveCompany.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Company\CompanyViews\Companies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Company\CompanyViews\EditCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

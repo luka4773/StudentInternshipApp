@@ -1,0 +1,27 @@
+﻿<Window x:Class="STudentInternshipApplication.Company.CompanyViews.EditCompany"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditCompany" Height="377.777" Width="306.667">
+    <Grid>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="115,17,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="115,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Selected Company Name" HorizontalAlignment="Left" Margin="135,187,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,238,0,0" TextWrapping="Wrap" Text="{Binding CompanyEmail}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,187,0,0" TextWrapping="Wrap" Text="{Binding CompanyName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,266,0,0" TextWrapping="Wrap" Text="{Binding CompanyAddress}" VerticalAlignment="Top" Width="120"/>
+        <ListBox ItemsSource="{Binding Companies}" SelectedItem="{Binding CurrentCompany}" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Done" Command="{Binding CloseEditCompanyCommand}" HorizontalAlignment="Left" Margin="106,303,0,0" VerticalAlignment="Top" Width="75" Click ="Button_Click" />
+        <Button Content="Update" Command="{Binding EditCompany}" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="New Address" HorizontalAlignment="Left" Margin="155,266,0,0" VerticalAlignment="Top"/>
+        <Label Content="New Email" HorizontalAlignment="Left" Margin="155,236,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentCompany.Address}" HorizontalAlignment="Left" Margin="168,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentCompany.Email}" HorizontalAlignment="Left" Margin="168,17,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

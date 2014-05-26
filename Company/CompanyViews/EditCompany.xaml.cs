@@ -15,15 +15,15 @@ using System.Windows.Shapes;
 namespace STudentInternshipApplication.Company.CompanyViews
 {
     /// <summary>
-    /// Interaction logic for Companies.xaml
+    /// Interaction logic for EditCompany.xaml
     /// </summary>
-    public partial class Companies : Window
+    public partial class EditCompany : Window
     {
-        CompanyViewModel companyViewModel = new CompanyViewModel();
-        public Companies()
+        CompanyViewModel c = new CompanyViewModel();
+        public EditCompany()
         {
             InitializeComponent();
-            DataContext = companyViewModel;
+            DataContext = c;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,14 +31,6 @@ namespace STudentInternshipApplication.Company.CompanyViews
             Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+       
     }
 }

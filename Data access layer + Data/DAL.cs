@@ -164,6 +164,22 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             MessageBox.Show("Company deleted.");
             Disconnect();
         }
+        public void EditCompany(Company.Company company)
+        {
+            Connect();
+            var command = new SqlCommand()
+            {
+                Connection = _connection,
+                CommandType = CommandType.Text,
+                CommandText = "UPDATE CompanyDataTable SET Email = @Email, Address = @Address WHERE Name = @Name"
+            };
+            command.Parameters.Add(new SqlParameter("Name", company.Name));
+            command.Parameters.Add(new SqlParameter("Email", company.Email));
+            command.Parameters.Add(new SqlParameter("Address", company.Address));
+            command.ExecuteNonQuery();
+            MessageBox.Show("Company Updated.");
+            Disconnect();
+        }
 
         }
     }

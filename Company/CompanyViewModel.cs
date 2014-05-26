@@ -42,8 +42,18 @@ namespace STudentInternshipApplication.Company
         private readonly ICommand _closeAddCompanyCommand;
         private readonly ICommand _openRemoveCompanyCommand;
         private readonly ICommand _closeRemoveCompanyCommand;
+        private readonly ICommand _openEditCompanyCommand;
+        private readonly ICommand _closeEditCompanyCommand;
 
+        public ICommand OpenEditCompanyCommand
+        {
+            get { return _openEditCompanyCommand; }
+        }
 
+        public ICommand CloseEditCompanyCommand
+        {
+            get { return _closeEditCompanyCommand; }
+        }
         public ICommand OpenRemoveCompanyCommand
         {
             get { return _openRemoveCompanyCommand; }
@@ -77,6 +87,17 @@ namespace STudentInternshipApplication.Company
             get { return _editCompanyCommand; }
         }
 
+        private void OpenEditCompaniesCommand()
+        {
+            var c = new EditCompany();
+            c.Show();
+        }
+
+        private void CloseEditCompaniesCommand()
+        {
+            var c = new Companies();
+            c.Show();
+        }
         private void OpenRemoveCompaniesCommand()
         {
             var c = new RemoveCompany();
@@ -122,7 +143,13 @@ namespace STudentInternshipApplication.Company
 
         private void EditCompanyCommand()
         {
-
+            var c = new Company()
+            {
+                Name = CompanyName,
+                Email = CompanyEmail,
+                Address = CompanyAddress
+            };
+            controller.EditCompany(c);
         }
 
         #endregion
@@ -190,6 +217,8 @@ namespace STudentInternshipApplication.Company
             _closeAddCompanyCommand = new RelayCommand(CloseAddCompanyCommand){IsEnabled = true};
             _openRemoveCompanyCommand = new RelayCommand(OpenRemoveCompaniesCommand){IsEnabled = true};
             _closeRemoveCompanyCommand = new RelayCommand(CloseRemoveCompaniesCommand){IsEnabled = true};
+            _openEditCompanyCommand = new RelayCommand(OpenEditCompaniesCommand){IsEnabled = true};
+            _closeEditCompanyCommand = new RelayCommand(CloseEditCompaniesCommand){IsEnabled = true};
             _currentCompany = Companies[0];
         }
 
