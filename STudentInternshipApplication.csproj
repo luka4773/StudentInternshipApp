@@ -68,76 +68,83 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Company\Company.cs" />
-    <Compile Include="Company\CompanyViewModel.cs" />
-    <Compile Include="Company\CompanyViews\AddCompany.xaml.cs">
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="ViewModel\CompanyViewModel.cs" />
+    <Compile Include="View\AddCompany.xaml.cs">
       <DependentUpon>AddCompany.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Company\CompanyViews\Companies.xaml.cs">
+    <Compile Include="View\Companies.xaml.cs">
       <DependentUpon>Companies.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Company\CompanyViews\EditCompany.xaml.cs">
+    <Compile Include="View\EditCompany.xaml.cs">
       <DependentUpon>EditCompany.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Company\CompanyViews\RemoveCompany.xaml.cs">
+    <Compile Include="View\EditInternship.xaml.cs">
+      <DependentUpon>EditInternship.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RemoveCompany.xaml.cs">
       <DependentUpon>RemoveCompany.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Data access layer + Data\DAL.cs" />
-    <Compile Include="InternshipDataDisplay.cs" />
-    <Compile Include="Internship\Internship.cs" />
-    <Compile Include="Internship\InternshipViewModel.cs" />
-    <Compile Include="Internship\InternshipViews\AddInternship.xaml.cs">
+    <Compile Include="Model\InternshipDataDisplay.cs" />
+    <Compile Include="Model\Internship.cs" />
+    <Compile Include="ViewModel\InternshipViewModel.cs" />
+    <Compile Include="View\AddInternship.xaml.cs">
       <DependentUpon>AddInternship.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Internship\InternshipViews\Internships.xaml.cs">
+    <Compile Include="View\Internships.xaml.cs">
       <DependentUpon>Internships.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Internship\InternshipViews\RemoveInternship.xaml.cs">
+    <Compile Include="View\RemoveInternship.xaml.cs">
       <DependentUpon>RemoveInternship.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Student\StudentViews\CreateStudent.xaml.cs">
+    <Compile Include="View\CreateStudent.xaml.cs">
       <DependentUpon>CreateStudent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student\Student.cs" />
-    <Compile Include="Student\StudentViews\EditStudent.xaml.cs">
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="View\EditStudent.xaml.cs">
       <DependentUpon>EditStudent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student\StudentViews\RemoveStudent.xaml.cs">
+    <Compile Include="View\RemoveStudent.xaml.cs">
       <DependentUpon>RemoveStudent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student\StudentViews\Students.xaml.cs">
+    <Compile Include="View\Students.xaml.cs">
       <DependentUpon>Students.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student\StudentViewModel.cs" />
-    <Page Include="Company\CompanyViews\AddCompany.xaml">
+    <Compile Include="ViewModel\StudentViewModel.cs" />
+    <Page Include="View\AddCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Company\CompanyViews\Companies.xaml">
+    <Page Include="View\Companies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Company\CompanyViews\EditCompany.xaml">
+    <Page Include="View\EditCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Company\CompanyViews\RemoveCompany.xaml">
+    <Page Include="View\EditInternship.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Internship\InternshipViews\AddInternship.xaml">
+    <Page Include="View\RemoveCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Internship\InternshipViews\Internships.xaml">
+    <Page Include="View\AddInternship.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Internship\InternshipViews\RemoveInternship.xaml">
+    <Page Include="View\Internships.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RemoveInternship.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,19 +160,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Student\StudentViews\CreateStudent.xaml">
+    <Page Include="View\CreateStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Student\StudentViews\EditStudent.xaml">
+    <Page Include="View\EditStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Student\StudentViews\RemoveStudent.xaml">
+    <Page Include="View\RemoveStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Student\StudentViews\Students.xaml">
+    <Page Include="View\Students.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

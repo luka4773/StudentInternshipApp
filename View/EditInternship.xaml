@@ -1,0 +1,45 @@
+﻿<Window x:Class="STudentInternshipApplication.View.EditInternship"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditInternship" Height="340" Width="535.556">
+    <Grid>
+        <ListBox ItemsSource="{Binding Internships}" SelectedItem="{Binding CurrentInternship}" HorizontalAlignment="Left" Height="142" Margin="11,40,0,0" VerticalAlignment="Top" Width="102">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Id}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <DatePicker Text="{Binding InternshipStartDate, Mode=TwoWay}" HorizontalAlignment="Left" Margin="350,72,0,0" VerticalAlignment="Top"/>
+        <DatePicker Text="{Binding InternshipEndDate, Mode=TwoWay}" HorizontalAlignment="Left" Margin="350,129,0,0" VerticalAlignment="Top"/>
+        <ListBox ItemsSource="{Binding Students}" SelectedItem="{Binding CurrentStudent}" HorizontalAlignment="Left" Height="142" Margin="129,40,0,0" VerticalAlignment="Top" Width="100">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Cpr}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox ItemsSource="{Binding Companies}" SelectedItem="{Binding CurrentCompany}" HorizontalAlignment="Left" Height="142" Margin="245,40,0,0" VerticalAlignment="Top" Width="100">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Edit" Command="{Binding EditInternship}" HorizontalAlignment="Left" Margin="11,273,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="{Binding CurrentInternship.StartDate}" HorizontalAlignment="Left" Margin="11,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentStudent.Name}" HorizontalAlignment="Left" Margin="129,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentCompany.Address}" HorizontalAlignment="Left" Margin="256,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentInternship.EndDate}" HorizontalAlignment="Left" Margin="11,213,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentStudent.Age}" HorizontalAlignment="Left" Margin="129,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentStudent.Supervisor}" HorizontalAlignment="Left" Margin="129,241,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentCompany.Email}" HorizontalAlignment="Left" Margin="256,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="New End Date" HorizontalAlignment="Left" Margin="355,101,0,0" VerticalAlignment="Top"/>
+        <Label Content="New Start Date" HorizontalAlignment="Left" Margin="350,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Internship ID" HorizontalAlignment="Left" Margin="11,12,0,0" VerticalAlignment="Top"/>
+        <Label Content="Student CPR" HorizontalAlignment="Left" Margin="129,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company Name" HorizontalAlignment="Left" Margin="245,12,0,0" VerticalAlignment="Top"/>
+        <Button Content="Done" Command="{Binding CloseEditInternship}" HorizontalAlignment="Left" Margin="113,273,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

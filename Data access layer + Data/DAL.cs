@@ -279,6 +279,23 @@ namespace STudentInternshipApplication.Data_access_layer___Data
             command.ExecuteNonQuery();
             MessageBox.Show("Internship removed.");
         }
+        public void EditInternship(Internship.Internship internship, Student.Student student, Company.Company company)
+        {
+            Connect();
+            var command = new SqlCommand()
+            {
+                Connection = _connection,
+                CommandType = CommandType.Text,
+                CommandText = "UPDATE InternshipTable SET Startdate = @Startdate, Enddate = @Enddate, Name = '"+company.Name+"', Cpr = '"+student.Cpr+"'  WHERE InternshipID = '" + internship.Id + "'"
+            };
+            command.Parameters.Add(new SqlParameter("Startdate", internship.StartDate));
+            command.Parameters.Add(new SqlParameter("Enddate", internship.EndDate));
+            command.Parameters.Add(new SqlParameter("Name", company.Name));
+            command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
+            command.ExecuteNonQuery();
+            MessageBox.Show("Internship Updated.");
+            Disconnect();
+        }
         }
     }
 
