@@ -52,5 +52,25 @@ namespace STudentInternshipApplication.Controller
         {
             _access.EditCompany(company);
         }
+
+        public ObservableCollection<Internship.Internship> GetInternships()
+        {
+            return _access.GetInternships();
+        }
+
+        public void AddInternship(Internship.Internship internship, Student.Student student, Company.Company company)
+        {
+            _access.AddInternship(internship, student, company);
+        }
+
+        public ObservableCollection<InternshipDataDisplay> GetInternshipDataDisplays()
+        {
+            return _access.GetData();
+        }
+
+        public void RemoveInternship(Company.Company company)
+        {
+            _access.RemoveInternship(company);
+        }
     }
 }

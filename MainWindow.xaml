@@ -5,6 +5,7 @@
     <Grid>
         <Button Content="Open Students" Command="{Binding openStudents}" HorizontalAlignment="Left" Margin="21,34,0,0" VerticalAlignment="Top" Width="104" Click="Button_Click_1"/>
         <Button Content="Open Companies" Command="{Binding openCompanies}" HorizontalAlignment="Left" Margin="21,84,0,0" VerticalAlignment="Top" Width="118"/>
+        <Button Content="Open Internships" Command="{Binding openInternships}" HorizontalAlignment="Left" Margin="21,124,0,0" VerticalAlignment="Top" Width="118"/>
 
     </Grid>
 </Window>

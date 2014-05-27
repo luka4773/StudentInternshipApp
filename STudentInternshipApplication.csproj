@@ -84,7 +84,18 @@
     </Compile>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Data access layer + Data\DAL.cs" />
+    <Compile Include="InternshipDataDisplay.cs" />
     <Compile Include="Internship\Internship.cs" />
+    <Compile Include="Internship\InternshipViewModel.cs" />
+    <Compile Include="Internship\InternshipViews\AddInternship.xaml.cs">
+      <DependentUpon>AddInternship.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internship\InternshipViews\Internships.xaml.cs">
+      <DependentUpon>Internships.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Internship\InternshipViews\RemoveInternship.xaml.cs">
+      <DependentUpon>RemoveInternship.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
@@ -115,6 +126,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Company\CompanyViews\RemoveCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Internship\InternshipViews\AddInternship.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Internship\InternshipViews\Internships.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Internship\InternshipViews\RemoveInternship.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

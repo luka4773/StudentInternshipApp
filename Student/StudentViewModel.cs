@@ -33,8 +33,23 @@ namespace STudentInternshipApplication.Student
        
         
         private ObservableCollection<Student> _getStudents = new ObservableCollection<Student>();
+        private ObservableCollection<Internship.Internship> _getInternships = new ObservableCollection<Internship.Internship>();
         Controller.Controller controller = new Controller.Controller();
         private Student _currentStudent;
+        private Internship.Internship _currentInternship;
+
+        public Internship.Internship CurrentInternship
+        {
+            get { return _currentInternship; }
+            set
+            {
+                if (value != _currentInternship)
+                {
+                    _currentInternship = value;
+                    OnPropertyChanged("CurrentInternship");
+                }
+            }
+        }
 
         public Student CurrentStudent
         {
@@ -95,28 +110,32 @@ namespace STudentInternshipApplication.Student
 
         #endregion
 
+        #region Commands
+
         private void CloseEditStudentCommand()
         {
             var s = new Students();
             s.Show();
         }
+
         private void OpenEditStudentCommand()
         {
             var s = new EditStudent();
             s.Show();
         }
-        
+
         private void OpenAddStudentCommand()
         {
-            
+
             var s = new CreateStudent();
             s.Show();
         }
+
         private void RemoveStudentCommand()
         {
             var s = new Student
             {
-                Cpr = StudentCpr
+                Cpr = _currentStudent.Cpr
             };
             controller.RemoveStudent(s);
         }
@@ -125,7 +144,7 @@ namespace STudentInternshipApplication.Student
         {
             var s = new Student
             {
-                Cpr = StudentCpr,
+                Cpr = _currentStudent.Cpr,
                 Name = StudentName,
                 Age = StudentAge,
                 Supervisor = StudentSupervisor
@@ -138,18 +157,20 @@ namespace STudentInternshipApplication.Student
             var s = new Students();
             s.Show();
         }
+
         private void AddStudentCommand()
         {
+            
             var s = new Student
             {
                 Name = StudentName,
                 Age = StudentAge,
                 Supervisor = StudentSupervisor,
                 Cpr = StudentCpr,
-               
+
             };
             controller.AddStudent(s);
-           
+
 
         }
 
@@ -158,11 +179,15 @@ namespace STudentInternshipApplication.Student
             var s = new Students();
             s.Show();
         }
+
         private void OpenRemoveStudents()
         {
             var s = new RemoveStudent();
             s.Show();
         }
+
+        #endregion
+
 
         #region Properties
 
@@ -210,7 +235,15 @@ namespace STudentInternshipApplication.Student
 
         #endregion
 
-
+        public ObservableCollection<Internship.Internship> Internships
+        {
+            get { return _getInternships; }
+            set
+            {
+                _getInternships = value;
+                OnPropertyChanged("Internships");
+            }
+        }
         public ObservableCollection<Student> Students
         {
             get
@@ -232,6 +265,7 @@ namespace STudentInternshipApplication.Student
 
 
             Students = controller.GetStudents();
+            Internships = controller.GetInternships();
             MessageBox.Show("" + Students.Count);           
 
             _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
@@ -244,6 +278,7 @@ namespace STudentInternshipApplication.Student
             _openEditStudent = new RelayCommand(OpenEditStudentCommand){IsEnabled = true};
             _closeEditStudent = new RelayCommand(CloseEditStudentCommand){IsEnabled = true};
             _currentStudent = Students[0];
+            _currentInternship = Internships[0];
 
 
         }

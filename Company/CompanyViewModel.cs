@@ -136,7 +136,7 @@ namespace STudentInternshipApplication.Company
         {
             var c = new Company
             {
-                Name = CompanyName
+                Name = _currentCompany.Name
             };
             controller.RemoveCompany(c);
         }
@@ -145,7 +145,7 @@ namespace STudentInternshipApplication.Company
         {
             var c = new Company()
             {
-                Name = CompanyName,
+                Name = _currentCompany.Name,
                 Email = CompanyEmail,
                 Address = CompanyAddress
             };

@@ -15,7 +15,13 @@ namespace STudentInternshipApplication
     {
         private readonly ICommand _openStudentsCommand;
         private readonly ICommand _openCompaniesCommand;
+        private readonly ICommand _openInternshipsCommand;
 
+
+        public ICommand openInternships
+        {
+            get { return _openInternshipsCommand; }
+        }
 
         public ICommand openCompanies
         {
@@ -28,7 +34,11 @@ namespace STudentInternshipApplication
             get { return _openStudentsCommand; }
         }
 
-
+        private void openInternshipsCommand()
+        {
+            var i = new Internship.InternshipViews.Internships();
+            i.Show();
+        }
         private void openCompaniesCommand()
         {
             var c = new Company.CompanyViews.Companies();
@@ -47,6 +57,7 @@ namespace STudentInternshipApplication
         {
                 _openStudentsCommand = new RelayCommand(openStudentsCommand){IsEnabled = true};
                 _openCompaniesCommand = new RelayCommand(openCompaniesCommand){IsEnabled = true};
+                _openInternshipsCommand = new RelayCommand(openInternshipsCommand){IsEnabled = true};
         }
 
 
