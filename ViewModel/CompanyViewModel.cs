@@ -208,7 +208,7 @@ namespace STudentInternshipApplication.Company
         public CompanyViewModel()
         {
             Companies = controller.GetCompanies();
-            MessageBox.Show("" + Companies.Count);
+            
 
             _addCompanyCommand = new RelayCommand(AddCompanyCommand){IsEnabled = true};
             _editCompanyCommand = new RelayCommand(EditCompanyCommand){IsEnabled = true};

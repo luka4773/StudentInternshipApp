@@ -318,7 +318,7 @@ namespace STudentInternshipApplication.Internship
             InternshipData = controller.GetInternshipDataDisplays();
             _currentInternshipDataDisplay = InternshipData[0];
 
-            MessageBox.Show("Students " + Students.Count + " Companies " + Companies.Count + " Internships " + Internships.Count);
+            
 
 
             _openAddInternshipCommand = new RelayCommand(OpenAddInternshipCommand){IsEnabled = true};

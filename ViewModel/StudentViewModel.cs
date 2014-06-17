@@ -266,7 +266,7 @@ namespace STudentInternshipApplication.Student
 
             Students = controller.GetStudents();
             Internships = controller.GetInternships();
-            MessageBox.Show("" + Students.Count);           
+                   
 
             _removeStudentCommand = new RelayCommand(RemoveStudentCommand) { IsEnabled = true };
             _editStudentCommand = new RelayCommand(EditStudentCommand) { IsEnabled = true };

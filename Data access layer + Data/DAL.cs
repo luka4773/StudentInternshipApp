@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace STudentInternshipApplication.Data_access_layer___Data
 {
     class DAL
     {
-
-
+        
         private SqlConnection _connection;
         private const string ConnectionString = @"Server=(LocalDB)\v11.0;AttachDbFilename=""E:\ConstructionSemester2\STudentInternshipApplication\STudentInternshipApplication\Data access layer + Data\Data.mdf"";Integrated Security=True;";
 
@@ -30,20 +30,55 @@ namespace STudentInternshipApplication.Data_access_layer___Data
 
         public void AddStudent(Student.Student student)
         {
+            
+            int rows = 0;
             Connect();
-            var command = new SqlCommand()
+            var command2 = new SqlCommand()
             {
                 Connection = _connection,
                 CommandType = CommandType.Text,
-                CommandText = "INSERT INTO StudentDataTable VALUES (@Cpr, @Name, @Age, @Supervisor)"
+                CommandText = "SELECT * FROM StudentDataTable WHERE Cpr = '"+student.Cpr+"'"
             };
-            command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
-            command.Parameters.Add(new SqlParameter("Name", student.Name));
-            command.Parameters.Add(new SqlParameter("Age", student.Age)); 
-            command.Parameters.Add(new SqlParameter("Supervisor", student.Supervisor));
-            command.ExecuteNonQuery();
-            MessageBox.Show("Student added.");
-            Disconnect();
+           var reader = command2.ExecuteReader();
+            if (reader.HasRows)
+            {
+                 while (reader.Read())
+                    rows++;            
+            }
+            reader.Close();
+            if (rows == 0 )
+            {
+                if (student.Name.Any(character => character < 'a' || character > 'z'))
+                {
+                    MessageBox.Show("Student name can contain letters only. Please try again.");
+                }else if (student.Supervisor.Any(character => character < 'a' || character > 'z'))
+                {
+                    MessageBox.Show("Supervisor name can contain letters only. Please try again.");
+                }
+                else if (student.Cpr.Any(character => character < '0' || character > '9'))
+                {
+                    MessageBox.Show("CPR must be 10 characters long and numbers only. Please try again.");
+                }
+                else if (student.Cpr.Length == 10)
+                {
+                    var command = new SqlCommand()
+                    {
+                        Connection = _connection,
+                        CommandType = CommandType.Text,
+                        CommandText = "INSERT INTO StudentDataTable VALUES (@Cpr, @Name, @Age, @Supervisor)"
+                    };
+                    command.Parameters.Add(new SqlParameter("Cpr", student.Cpr));
+                    command.Parameters.Add(new SqlParameter("Name", student.Name));
+                    command.Parameters.Add(new SqlParameter("Age", student.Age));
+                    command.Parameters.Add(new SqlParameter("Supervisor", student.Supervisor));
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Student added.");
+                    Disconnect();
+                }
+                else MessageBox.Show("CPR must be 10 characters long and numbers only. Please try again.");
+            }
+            else MessageBox.Show("Student with this CPR already exists.");
+           
         }
 
         public void EditStudent(Student.Student student)
@@ -170,19 +205,37 @@ namespace STudentInternshipApplication.Data_access_layer___Data
 
         public void AddCompany(Company.Company company)
         {
+            int rows = 0;
             Connect();
-            var command = new SqlCommand()
+            var command2 = new SqlCommand()
             {
-                Connection = _connection,
-                CommandType = CommandType.Text,
-                CommandText = "INSERT INTO CompanyDataTable VALUES (@Name, @Email, @Address)"
+               Connection = _connection,
+               CommandType = CommandType.Text,
+               CommandText = "SELECT * FROM CompanyDataTable WHERE Name = '"+company.Name+"'"
             };
-            command.Parameters.Add(new SqlParameter("Name", company.Name));
-            command.Parameters.Add(new SqlParameter("Email", company.Email));
-            command.Parameters.Add(new SqlParameter("Address", company.Address));
-            command.ExecuteNonQuery();
-            MessageBox.Show("Company added.");
-            Disconnect();
+            var reader = command2.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                    rows++;
+            }
+            reader.Close();
+            if (rows == 0)
+            {
+                var command = new SqlCommand()
+                {
+                    Connection = _connection,
+                    CommandType = CommandType.Text,
+                    CommandText = "INSERT INTO CompanyDataTable VALUES (@Name, @Email, @Address)"
+                };
+                command.Parameters.Add(new SqlParameter("Name", company.Name));
+                command.Parameters.Add(new SqlParameter("Email", company.Email));
+                command.Parameters.Add(new SqlParameter("Address", company.Address));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Company added.");
+                Disconnect();
+            }
+            else MessageBox.Show("A company with this name already exists.");
         }
         public void RemoveCompany(Company.Company company)
         {
